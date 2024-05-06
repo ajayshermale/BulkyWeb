@@ -1,5 +1,7 @@
 ﻿
 using Bulky.Models;
+using Bulky.Models.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 //using BulkyWeb.Models;
@@ -7,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BulkyWeb.Data
 {
-    public class ApplicationDbContext :IdentityDbContext
+    public class ApplicationDbContext :IdentityDbContext<IdentityUser>
     {
         //to pass all the option to base class i.e Dbcontext
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> option ): base(option)
@@ -17,6 +19,8 @@ namespace BulkyWeb.Data
         //Tocreate table we need to Use Dbset
         public  DbSet<Category> Categories { get; set; }
         public DbSet<Product>  Products { get; set; }
+
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{
