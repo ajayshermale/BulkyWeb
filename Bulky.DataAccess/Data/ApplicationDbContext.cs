@@ -20,8 +20,11 @@ namespace BulkyWeb.Data
         public  DbSet<Category> Categories { get; set; }
         public DbSet<Product>  Products { get; set; }
 
+        public DbSet<Company> Companys { get; set; }
+
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
+        public DbSet<ShoppingCart> ShoppingCarts { get; set; }  
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{
         //    modelBuilder.Entity<Category>().HasData(
@@ -30,6 +33,9 @@ namespace BulkyWeb.Data
         //        new Category { Id = 3, Name = "Action", DispalyOrder = 3 }
         //        );
         //}
+
+        public DbSet<OrderHeader> OrderHeaders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

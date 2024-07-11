@@ -1,0 +1,24 @@
+﻿@model Bulky.Models.Models.OrderHeader
+
+<div class="align-content-centre">
+    <div class="text-center text-success">
+        <h3>Payment Received Successfully!!!</h3>
+    </div>
+    <br />
+    <table class="table tabletable-striped" width="10px">
+        <thead>
+            <tr>
+                <td>
+                    <b>Transaction Number</b>
+                </td>
+                <td>@Model.TrackingNumber</td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Order Number</b>
+                <td>@Model.PaymentIntentId</td>
+                </td>
+            </tr>
+        </thead>
+    </table>
+</div>
